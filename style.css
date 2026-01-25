@@ -1,0 +1,213 @@
+:root{
+--primary:#0f2a44;
+--secondary:#1f4e79;
+--light:#f5f7fa;
+--accent:#f4b400;
+--dark:#222;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{color:var(--dark);line-height:1.5;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+
+/* HERO */
+.hero{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100vh;
+background:url('https://www.pontotel.com.br/local/wp-content/uploads/2023/10/contabilidade-gerencial.webp') center/cover no-repeat;
+z-index:-1;
+transition:height 0.6s ease;
+}
+.hero.shrink{height:150px;}
+/* HEADER */
+header{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:150px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 40px;
+background:rgba(15,42,68,0.9);
+color:#fff;
+transform:translateY(-150px);
+transition:transform 0.6s ease;
+z-index:10;
+}
+header.show{transform:translateY(0);}
+.logo{font-size:24px;font-weight:bold;}
+
+
+nav ul{list-style:none;display:flex;gap:25px;align-items:center;}
+nav li{position:relative;}
+nav a:hover{color:var(--accent);}
+
+
+/* DROPDOWN */
+.dropdown ul{
+position:absolute;
+top:100%;left:0;
+background:#fff;
+color:#000;
+min-width:180px;
+display:none;
+flex-direction:column;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+.dropdown:hover ul{display:flex;}
+.dropdown ul a{padding:10px 15px;}
+.dropdown ul a:hover{background:var(--light);}
+
+
+.btn{
+padding:10px 20px;
+background:var(--accent);
+color:#000;
+border-radius:4px;
+font-weight:bold;
+}
+/* HAMBURGER */
+.hamburger{display:none;font-size:26px;cursor:pointer;}
+
+
+/* CONTENT OFFSET */
+main{margin-top:100vh;background:#fff;}
+
+
+section{padding:80px 40px;}
+h2{text-align:center;margin-bottom:40px;color:var(--primary);}
+
+
+/* DIFERENCIAL */
+.grid-4{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+justify-items:center;
+}
+.card{
+width:250px;
+height:480px;
+background:#fff;
+border-radius:8px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+padding:25px;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+.card i{font-size:40px;color:var(--secondary);margin-bottom:20px;}
+.card h3{margin-bottom:15px;}
+.card p{font-size:14px;}
+.card a{margin-top:15px;color:var(--secondary);font-weight:bold;}
+
+
+/* SERVIÇOS */
+.grid-3{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+justify-items:center;
+}
+.service{
+width:350px;
+height:520px;
+background:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+border-radius:8px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+}
+.service img{height:200px;object-fit:cover;}
+.service div{padding:20px;}
+
+
+/* DESTAQUE */
+.highlight{
+width:100%;
+height:400px;
+background:var(--secondary);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom: 20px;
+}
+
+.highlight-content{
+max-width:1200px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+padding:0 40px;
+}
+.highlight img{border-radius:10px;}
+
+
+/* DEPOIMENTOS */
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+justify-items:center;
+}
+.testimonial{
+width:350px;
+height:220px;
+background:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+border-radius:8px;
+padding:20px;
+text-align:center;
+}
+.testimonial img{
+width:50px;height:50px;
+border-radius:50%;
+margin:10px auto;
+object-fit:cover;
+}
+/* CONTATO */
+.contact{
+display: flex;
+width:100%;
+height:520px;
+align-items:center;
+background-color: #efc8c8;
+gap:40px;
+margin-bottom: 20px;
+}
+
+.textContact{
+    display:block;
+    gap: 5px;
+
+    
+    
+}
+
+.contact img{height:100%;object-fit:cover;}
+
+
+footer{
+background:var(--primary);
+color:#fff;
+text-align:center;
+padding:20px;
+}
+/* RESPONSIVO */
+@media(max-width:900px){
+nav{display:none;position:absolute;top:150px;left:0;width:100%;background:var(--primary);}
+nav ul{flex-direction:column;padding:20px;}
+nav.show{display:block;}
+.hamburger{display:block;}
+header{padding:0 20px;}
+.highlight-content{grid-template-columns:1fr;}
+.contact{grid-template-columns:1fr;height:auto;}
+}
